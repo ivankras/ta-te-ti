@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-#include "menu.h"
+#include "mensajes.h"
 
 void imprimirCartelTaTeTi();
 void imprimirOpciones();

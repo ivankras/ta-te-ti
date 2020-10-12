@@ -2,10 +2,8 @@
 #include <stdio.h>
 #include <windows.h>
 
-#include "menu.h"
-
-#define SIMBOLO_J1 X
-#define SIMBOLO_J2 O
+#include "mensajes.h"
+#include "juego.h"
 
 int main() {
     char input = '%';
@@ -19,8 +17,7 @@ int main() {
 
         switch (input) {
             case '1':
-                // TODO
-                // iniciarJuego();
+                jugar();
                 system("cls");
                 break;
             case '2':
@@ -29,11 +26,11 @@ int main() {
                 // salir();
                 break;
             case 't':
+            case 'T':
                 system("cls");
                 printf("Aguante la T\n");
                 break;
             default:
-                // TODO: Tapado por el imprimirMenu
                 system("cls");
                 printf("Sos bobito?? Esa opcion no\n");
                 break;
