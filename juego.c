@@ -28,13 +28,30 @@ void jugar() {
         printf("Turno del jugador %d (%c)\n\n", turno, simbolo_actual);
         imprimirTablero(tablero);
         printf("Ingrese el numero del casillero deseado (ver referencia)\n");
+        
         input = getch();
-
-        aux = input - 1 - '0';
-        // TODO: Este control no se esta haciendo bien (lo de aux)
-        while ((input < '1' || input > '9') && tablero[aux/3][aux%3] != ' ') {
-            printf("Sos un salame. Elegi bien el casillero\n");
+        // Tecla de Esc
+        if (input == 27) {
+            system("cls");
+            printf("Chau ortiba.\n");
+            printf("Tocate una tecla pa' salir.");
             input = getch();
+            return;
+        }
+        aux = input - 1 - '0';
+
+        while ((input < '1' || input > '9') || tablero[aux/3][aux%3] != ' ') {
+            printf("Sos un salame. Elegi bien el casillero\r");
+
+            input = getch();
+            if (input == 27) {
+                system("cls");
+                printf("Chau ortiba.\n");
+                printf("Tocate una tecla pa' salir.");
+                input = getch();
+                return;
+            }
+            aux = input - 1 - '0';
         }
         tablero[aux/3][aux%3] = simbolo_actual;
         system("cls");
@@ -47,13 +64,13 @@ void jugar() {
     imprimirTablero(tablero);
     switch (ganador) {
         case SIMBOLO_J1:
-            printf("\n\nGanador: Jugador 1. Jugador 2 sos un muerto.\n");
+            printf("\nGanador: Jugador 1. Jugador 2 sos un muerto.\n");
             break;
         case SIMBOLO_J2:
-            printf("\n\nGanador: Jugador 2. Jugador 1 sos un muerto.\n");
+            printf("\nGanador: Jugador 2. Jugador 1 sos un muerto.\n");
             break;
         case 1:
-            printf("\n\nGanador: Nadie porque son altos giles.\n");
+            printf("\nGanador: Nadie porque son altos giles.\n");
             break;
         default:
             printf("Comportamiento no deseado. Error en el programa. Giles.\n");

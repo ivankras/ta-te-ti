@@ -13,6 +13,13 @@ void imprimirMenu() {
     imprimirOpciones();
 }
 
+void salir() {
+    printf(" _____   _____   ____    ____    _____ \n");
+    printf("|  ___| |  _  | |    )  |    )  |  _  |\n");
+    printf("| |-    | |_| | | |- \\  | |- \\  | |_| | \n");
+    printf("|_|     |_____| |_| \\_\\ |_| \\_\\ |_____|\n");
+}
+
 void imprimirCartelTaTeTi() {
     printf(" _______   _    _______  _____  _______  _\n");
     printf("|__   __| / \\  |__   __||   __||__   __|| |\n");

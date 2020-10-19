@@ -2,8 +2,8 @@
 #include <stdio.h>
 #include <windows.h>
 
-#include "mensajes.h"
 #include "juego.h"
+#include "mensajes.h"
 
 int main() {
     char input = '%';
@@ -21,9 +21,8 @@ int main() {
                 system("cls");
                 break;
             case '2':
-                // TODO
                 system("cls");
-                // salir();
+                salir();
                 break;
             case 't':
             case 'T':
